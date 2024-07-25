@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: t-study
+
+server:
+  port: 1204
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    io.github.touchsun: DEBUG
+  file:
+    name: logs/application.log
