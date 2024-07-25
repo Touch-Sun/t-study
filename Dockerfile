@@ -8,7 +8,7 @@ ARG JAR_FILE
 ADD ${JAR_FILE} app.jar
 
 # 暴露容器运行时的端口
-EXPOSE 8080
+EXPOSE 1204
 
 # 启动应用
 ENTRYPOINT ["java", "-jar", "/app.jar"]
