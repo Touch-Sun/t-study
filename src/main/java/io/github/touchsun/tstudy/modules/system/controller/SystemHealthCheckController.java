@@ -1,4 +1,4 @@
-package io.github.touchsun.tstudy.controller;
+package io.github.touchsun.tstudy.modules.system.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +13,11 @@ import reactor.core.publisher.Flux;
  * @since 2024/7/25 17:27
  */
 @RestController
-@RequestMapping("/v1/health")
-public class HealthCheckController {
+@RequestMapping("/v1/system/health")
+public class SystemHealthCheckController {
 
     /**
-     * 反应式健康检查点
+     * Reactive health checkpoints
      */
     @GetMapping("/fluxCheck")
     public Flux<String> fluxCheck(@RequestParam(required = false) String uuid) {

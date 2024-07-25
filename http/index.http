@@ -1,0 +1,7 @@
+### health check
+GET http://127.0.0.1:1204/v1/system/health/fluxCheck
+Accept: application/json
+
+### health check
+GET http://127.0.0.1:1204/v1/system/config
+Accept: application/json

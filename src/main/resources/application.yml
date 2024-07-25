@@ -1,6 +1,9 @@
 spring:
   application:
     name: t-study
+  data:
+    mongodb:
+      uri: mongodb://root:1204@localhost:27017/t-study
 
 server:
   port: 1204
