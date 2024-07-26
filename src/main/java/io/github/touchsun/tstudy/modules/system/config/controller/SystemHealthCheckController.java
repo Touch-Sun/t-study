@@ -1,4 +1,4 @@
-package io.github.touchsun.tstudy.modules.system.controller;
+package io.github.touchsun.tstudy.modules.system.config.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

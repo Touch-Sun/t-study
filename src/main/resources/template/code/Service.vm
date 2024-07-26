@@ -1,0 +1,24 @@
+package io.github.touchsun.tstudy.modules.${module}.${function}.service;
+
+import io.github.touchsun.tstudy.common.service.AbstractBaseService;
+import io.github.touchsun.tstudy.modules.${module}.${function}.model.${beanName};
+import io.github.touchsun.tstudy.modules.${module}.${function}.repository.${beanName}Repository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+* ${beanName}Service Class
+*
+* @author touchsun
+* @since 2024/7/25 22:25
+*/
+@Service
+public class ${beanName}Service extends AbstractBaseService<${beanName}, String> {
+
+    @Autowired
+    public ${beanName}Service(${beanName}Repository repository) {
+        super(repository);
+    }
+
+}
+

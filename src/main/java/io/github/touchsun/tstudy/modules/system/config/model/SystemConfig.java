@@ -1,4 +1,4 @@
-package io.github.touchsun.tstudy.modules.system.model;
+package io.github.touchsun.tstudy.modules.system.config.model;
 
 import io.github.touchsun.tstudy.common.model.BaseModel;
 import lombok.Data;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author touchsun
  * @since 2024/7/25 21:40
  */
-@Document
+@Document("system_config")
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class SystemConfig extends BaseModel {
