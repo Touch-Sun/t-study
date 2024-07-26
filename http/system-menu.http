@@ -9,11 +9,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "C++语言基础",
+  "name": "阶段一",
   "logo": "https://img.io/logo.png",
-  "type": "2",
-  "path": "/lang/c",
-  "parent_id": "66a333074a5878326e3f7452"
+  "type": "1"
 }
 
 ### update one system menu

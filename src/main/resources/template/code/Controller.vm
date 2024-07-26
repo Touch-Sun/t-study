@@ -1,0 +1,26 @@
+package io.github.touchsun.tstudy.modules.${module}.${function}.controller;
+
+import io.github.touchsun.tstudy.common.controller.AbstractBaseController;
+import io.github.touchsun.tstudy.modules.${module}.${function}.model.${beanName};
+import io.github.touchsun.tstudy.modules.${module}.${function}.service.${beanName}Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+* UserController Class
+* web controller for ${beanName}
+*
+* @author touchsun
+* @since 2024/7/25 22:23
+*/
+@RestController
+@RequestMapping("/v1/${module}/${function}")
+public class ${beanName}Controller extends AbstractBaseController<${beanName}, String> {
+
+    @Autowired
+    public ${beanName}Controller(${beanName}Service service) {
+        super(service);
+    }
+
+}

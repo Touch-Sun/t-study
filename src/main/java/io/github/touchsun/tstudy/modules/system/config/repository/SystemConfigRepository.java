@@ -1,6 +1,6 @@
-package io.github.touchsun.tstudy.modules.system.repository;
+package io.github.touchsun.tstudy.modules.system.config.repository;
 
-import io.github.touchsun.tstudy.modules.system.model.SystemConfig;
+import io.github.touchsun.tstudy.modules.system.config.model.SystemConfig;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
 /**

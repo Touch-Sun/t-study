@@ -1,0 +1,38 @@
+
+### get all system check
+GET {{host}}{{version}}/system/log
+Accept: application/json
+
+### add one system log
+POST {{host}}{{version}}/system/log
+Accept: application/json
+Content-Type: application/json
+
+{
+  "system": "system",
+  "module": "user",
+  "end_points": "POST /v1/system/user",
+  "start_time": "123123323",
+  "end_time": "312323233",
+  "times": "200",
+  "ip": "10.3.4.37"
+}
+
+### update one system log
+PUT {{host}}{{version}}/system/log/66a345dc007ad4719d8fede0
+Accept: application/json
+Content-Type: application/json
+
+{
+  "system": "system",
+  "module": "config",
+  "end_points": "POST /v1/system/user",
+  "start_time": "123123323",
+  "end_time": "312323233",
+  "times": "200",
+  "ip": "10.3.4.37"
+}
+
+### delete one system log
+DELETE {{host}}{{version}}/system/log/66a3331d4a5878326e3f7455
+Accept: application/json

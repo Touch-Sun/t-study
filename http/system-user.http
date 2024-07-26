@@ -1,0 +1,30 @@
+
+### get all system check
+GET {{host}}{{version}}/system/user
+Accept: application/json
+
+### add one system user
+POST {{host}}{{version}}/system/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "touchsun",
+  "password": "123456",
+  "status": "1"
+}
+
+### update one system user
+PUT {{host}}{{version}}/system/user/66a3433df05e734d3d325ec1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "touchsun01",
+  "password": "123456",
+  "status": "1"
+}
+
+### delete one system user
+DELETE {{host}}{{version}}/system/user/66a3331d4a5878326e3f7455
+Accept: application/json

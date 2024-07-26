@@ -1,0 +1,29 @@
+
+### get all system check
+GET {{host}}{{version}}/system/role
+Accept: application/json
+
+### add one system role
+POST {{host}}{{version}}/system/role
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "管理员角色",
+  "code": "admin"
+}
+
+### update one system role
+PUT {{host}}{{version}}/system/role
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "66a347989b62464548af9b95",
+  "name": "管理员角色002",
+  "code": "admin"
+}
+
+### delete one system role
+DELETE {{host}}{{version}}/system/role/66a3331d4a5878326e3f7455
+Accept: application/json
