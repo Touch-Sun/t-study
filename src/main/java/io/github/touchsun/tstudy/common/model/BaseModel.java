@@ -1,12 +1,12 @@
 package io.github.touchsun.tstudy.common.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.*;
 
 import java.time.Instant;
+import java.util.Date;
 
 /**
  * BaseModel Class
@@ -28,19 +28,34 @@ public class BaseModel implements LogicDelInterface {
     /**
      * logic del field
      */
+    @LogicDel
     private Boolean del;
 
     /**
-     * create time. auto fill
+     * create time. autofill
      */
     @CreatedDate
-    private Instant create_time;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date create_time;
 
     /**
-     * update time. auto fill
+     * update time. autofill
      */
     @LastModifiedDate
-    private Instant update_time;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date update_time;
+
+    /**
+     * create user id. autofill
+     */
+    @CreatedBy
+    private String create_by;
+
+    /**
+     * update user id. autofill
+     */
+    @LastModifiedBy
+    private String update_by;
 
     @Override
     public Boolean getDel() {
@@ -51,5 +66,6 @@ public class BaseModel implements LogicDelInterface {
     public void setDel(Boolean del) {
         this.del = del;
     }
+    
 }
 

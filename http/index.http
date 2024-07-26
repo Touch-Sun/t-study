@@ -1,7 +1,33 @@
 ### health check
-GET http://127.0.0.1:1204/v1/system/health/fluxCheck
+GET {{host}}{{version}}/system/health/fluxCheck
 Accept: application/json
 
-### health check
-GET http://127.0.0.1:1204/v1/system/config
+### get all system check
+GET {{host}}{{version}}/system/config
+Accept: application/json
+
+### add one system config
+POST {{host}}{{version}}/system/config
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "TStudy",
+  "logo": "https://img.io/logo.png",
+  "api_version": "v1"
+}
+
+### update one system config
+PUT {{host}}{{version}}/system/config/66a317e95cbeff026354d7b9
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "TStudy V2",
+  "logo": "https://img.io/logo.png",
+  "api_version": "v2"
+}
+
+### delete one system config
+DELETE {{host}}{{version}}/system/config/66a31921df6455489ab2ddba
 Accept: application/json
