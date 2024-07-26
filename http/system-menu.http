@@ -1,0 +1,32 @@
+
+### get all system check
+GET {{host}}{{version}}/system/menu
+Accept: application/json
+
+### add one system menu
+POST {{host}}{{version}}/system/menu
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "C++语言基础",
+  "logo": "https://img.io/logo.png",
+  "type": "2",
+  "path": "/lang/c",
+  "parent_id": "66a333074a5878326e3f7452"
+}
+
+### update one system menu
+PUT {{host}}{{version}}/system/menu/66a333074a5878326e3f7452
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "阶段一0001",
+  "logo": "https://img.io/logo.png",
+  "type": "1"
+}
+
+### delete one system menu
+DELETE {{host}}{{version}}/system/menu/66a3331d4a5878326e3f7455
+Accept: application/json
