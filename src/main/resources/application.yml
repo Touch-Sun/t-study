@@ -4,6 +4,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://admin:1204@localhost:27017/t-study
+    redis:
+      host: localhost
+      port: 6379
+      database: 8
+      password: 1204+
 
 server:
   port: 1204
@@ -15,3 +20,7 @@ logging:
     io.github.touchsun: DEBUG
   file:
     name: logs/application.log
+
+security:
+  private-key: touchsun.1204@tstudy&project
+  expire-time: 36000000
