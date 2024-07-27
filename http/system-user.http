@@ -21,8 +21,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "lee.li",
-  "password": "1204"
+  "username": "touchsun01",
+  "password": "123456"
 }
 
 ### register
@@ -31,8 +31,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "username": "lee.li",
-  "password": "1204"
+  "username": "touchsun01",
+  "password": "123456"
 }
 
 ### update one system user
