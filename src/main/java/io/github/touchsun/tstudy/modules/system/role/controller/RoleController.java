@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
-* UserController Class
+* RoleController Class
 * web controller for Role
 *
 * @author touchsun
