@@ -1,7 +1,9 @@
-package io.github.touchsun.tstudy.common.security.provider;
+package io.github.touchsun.tstudy.common.security.provider.impl;
 
 import io.github.touchsun.tstudy.common.security.SecurityConstant;
-import io.github.touchsun.tstudy.common.security.filter.JwtFilterFactory;
+import io.github.touchsun.tstudy.common.security.filter.impl.JwtFilterFactory;
+import io.github.touchsun.tstudy.common.security.provider.ISecurityProvider;
+import io.github.touchsun.tstudy.common.security.provider.SecurityProvider;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

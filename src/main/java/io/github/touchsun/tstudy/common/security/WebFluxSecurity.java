@@ -20,7 +20,7 @@ import java.util.Map;
  */
 @Configuration
 @EnableWebFluxSecurity
-public class SecurityConfig {
+public class WebFluxSecurity {
 
     @Autowired
     private ApplicationContext applicationContext;

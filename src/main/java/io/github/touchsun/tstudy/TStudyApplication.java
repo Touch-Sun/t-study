@@ -12,8 +12,10 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
  * @since 2024/7/25 17:13
  */
 @SpringBootApplication
-@EnableMongoAuditing // enable mongo auditing autofill create_time... create_by... update_time... update_by...
-@EnableReactiveMongoRepositories(basePackages = "io.github.touchsun.tstudy") // enable reactive mongo repositories for aspect logic del
+// enable mongo auditing autofill create_time... create_by... update_time... update_by...
+@EnableMongoAuditing
+// enable reactive mongo repositories for aspect logic del
+@EnableReactiveMongoRepositories(basePackages = "io.github.touchsun.tstudy")
 public class TStudyApplication {
     
     public static void main(String[] args) {

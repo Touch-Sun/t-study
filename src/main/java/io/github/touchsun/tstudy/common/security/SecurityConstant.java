@@ -1,6 +1,7 @@
 package io.github.touchsun.tstudy.common.security;
 
 import io.github.touchsun.tstudy.core.config.StaticConstant;
+import io.github.touchsun.tstudy.core.config.StaticConstantConfigure;
 
 /**
  * t-study
@@ -8,6 +9,7 @@ import io.github.touchsun.tstudy.core.config.StaticConstant;
  * @author lee
  * @since 2024/7/27 10:28
  */
+@StaticConstantConfigure
 public class SecurityConstant {
 
     /**

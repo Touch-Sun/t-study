@@ -1,5 +1,6 @@
-package io.github.touchsun.tstudy.common.security.filter;
+package io.github.touchsun.tstudy.common.security.filter.impl;
 
+import io.github.touchsun.tstudy.common.security.filter.IFilterFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

@@ -2,6 +2,7 @@
 ### get all system check
 GET {{host}}{{version}}/system/log
 Accept: application/json
+Authorization: Bearer a10edb00a64694e645669fde052e7a8c
 
 ### add one system log
 POST {{host}}{{version}}/system/log
