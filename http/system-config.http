@@ -1,5 +1,5 @@
 ### health check
-GET {{host}}{{version}}/system/health/fluxCheck
+GET {{host}}{{version}}/health/check?uuid=3432434rtgfg
 Accept: application/json
 
 ### get all system check
