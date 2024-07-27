@@ -46,11 +46,14 @@ public class StaticConstantProcess implements ApplicationListener<ApplicationRea
                     ReflectionUtils.makeAccessible(field);
                     try {
                         // set value
-                        if (field.getType() == String.class) {
-                            field.set(null, value);
-                        } else if (field.getType() == int.class || field.getType() == long.class) {
-                            field.set(null, Long.parseLong(value));
-                        } // ... other type
+                        switch (field.getType().getName()) {
+                            case "string", "java.lang.String" -> field.set(null, value);
+                            case "int", "java.lang.Integer" -> field.set(null, Integer.parseInt(value));
+                            case "long", "java.lang.Long" -> field.set(null, Long.parseLong(value));
+                            case "boolean", "java.lang.Boolean" -> field.set(null, Boolean.parseBoolean(value));
+                            default ->
+                                    throw new RuntimeException("Unsupported field type: " + field.getType().getName());
+                        }
                     } catch (IllegalAccessException e) {
                         throw new RuntimeException("Failed to inject configuration property", e);
                     }

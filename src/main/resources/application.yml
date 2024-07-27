@@ -26,3 +26,7 @@ security:
   expire-time: 36000000
   token-prefix: Bearer
   default-password: 1204
+
+mongodb:
+  id-field-name: id
+  logic-del-default-val: false

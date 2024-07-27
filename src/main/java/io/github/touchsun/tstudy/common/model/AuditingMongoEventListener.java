@@ -32,7 +32,7 @@ public class AuditingMongoEventListener extends AbstractMongoEventListener {
         // get event source content
         Object source = event.getSource();
         // object id
-        Field id = ReflectionUtils.findField(source.getClass(), FieldConstant.ID);
+        Field id = ReflectionUtils.findField(source.getClass(), FieldConstant.ID_FIELD_NAME);
         // current date
         Date date = new Date();
         if (Objects.nonNull(id) && valueIsNotEmpty(source, id)) {
