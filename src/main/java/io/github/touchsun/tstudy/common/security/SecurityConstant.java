@@ -1,7 +1,7 @@
 package io.github.touchsun.tstudy.common.security;
 
-import io.github.touchsun.tstudy.core.config.StaticConstant;
-import io.github.touchsun.tstudy.core.config.StaticConstantConfigure;
+import io.github.touchsun.tstudy.core.constants.StaticConstant;
+import io.github.touchsun.tstudy.core.constants.StaticConstantConfigure;
 
 /**
  * t-study
@@ -23,4 +23,16 @@ public class SecurityConstant {
      */
     @StaticConstant("security.expire-time")
     public static long EXPIRE_TIME;
+
+    /**
+     * token prefix such as Bearer
+     */
+    @StaticConstant("security.token-prefix")
+    public static String TOKEN_PREFIX;
+
+    /**
+     * default password for user
+     */
+    @StaticConstant("security.default-password")
+    public static String DEFAULT_PASSWORD;
 }

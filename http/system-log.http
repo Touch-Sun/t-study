@@ -2,12 +2,13 @@
 ### get all system check
 GET {{host}}{{version}}/system/log
 Accept: application/json
-Authorization: Bearer a10edb00a64694e645669fde052e7a8c
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b3VjaHN1biIsImlhdCI6MTcyMjA5MjUzNiwiZXhwIjoxNzIyMTI4NTM2fQ.V7cMrxBWwLYTQRIGpKz9X1g0u8J9fmmuo0xjYCgj6YI
 
 ### add one system log
 POST {{host}}{{version}}/system/log
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b3VjaHN1biIsImlhdCI6MTcyMjA5MjUzNiwiZXhwIjoxNzIyMTI4NTM2fQ.V7cMrxBWwLYTQRIGpKz9X1g0u8J9fmmuo0xjYCgj6YI
 
 {
   "system": "system",

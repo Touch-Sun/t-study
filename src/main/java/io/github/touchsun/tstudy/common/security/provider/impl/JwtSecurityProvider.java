@@ -1,5 +1,6 @@
 package io.github.touchsun.tstudy.common.security.provider.impl;
 
+import io.github.touchsun.tstudy.common.exception.TStudyException;
 import io.github.touchsun.tstudy.common.security.SecurityConstant;
 import io.github.touchsun.tstudy.common.security.filter.impl.JwtFilterFactory;
 import io.github.touchsun.tstudy.common.security.provider.ISecurityProvider;
@@ -34,9 +35,13 @@ public class JwtSecurityProvider implements ISecurityProvider {
     }
 
     public Claims getClaimsFromToken(String token) {
-        return Jwts.parser()
-            .setSigningKey(SecurityConstant.PRIVATE_KEY)
-            .parseClaimsJws(token)
-            .getBody();
+        try {
+            return Jwts.parser()
+                    .setSigningKey(SecurityConstant.PRIVATE_KEY)
+                    .parseClaimsJws(token)
+                    .getBody();
+        } catch (Exception e) {
+            throw new TStudyException("token format error, please check token.");
+        }
     }
 }
