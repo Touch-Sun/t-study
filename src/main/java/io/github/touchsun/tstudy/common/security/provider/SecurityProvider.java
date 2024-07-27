@@ -23,5 +23,5 @@ public @interface SecurityProvider {
     /**
      * create instance impl filter factory bean
      */
-    Class<? extends IFilterFactory> filterFactory();
+    Class<? extends IFilterFactory>[] filterFactory();
 }

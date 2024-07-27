@@ -1,5 +1,6 @@
 package io.github.touchsun.tstudy.common.security;
 
+import io.github.touchsun.tstudy.common.security.filter.IFilterFactory;
 import io.github.touchsun.tstudy.common.security.provider.SecurityProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -44,10 +45,11 @@ public class WebFluxSecurity {
         beansWithAnnotation.values().stream()
                 .map(bean -> bean.getClass().getAnnotation(SecurityProvider.class))
                 .map(SecurityProvider::filterFactory)
-                .map(factoryClass -> applicationContext.getBean(factoryClass))
-                .forEach(factory -> {
-                    WebFilter webFilter = factory.getInstance();
-                    http.addFilterAt(webFilter, SecurityWebFiltersOrder.AUTHENTICATION);
+                .forEach(filterFactory -> {
+                    for (Class<? extends IFilterFactory> factoryClass : filterFactory) {
+                        WebFilter filter = applicationContext.getBean(factoryClass).getInstance();
+                        http.addFilterAt(filter, SecurityWebFiltersOrder.AUTHENTICATION);
+                    }
                 });
 
         return http.build();
