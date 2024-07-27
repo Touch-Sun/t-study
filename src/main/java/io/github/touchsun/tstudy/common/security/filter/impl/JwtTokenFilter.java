@@ -1,6 +1,6 @@
-package io.github.touchsun.tstudy.common.security.filter;
+package io.github.touchsun.tstudy.common.security.filter.impl;
 
-import io.github.touchsun.tstudy.common.security.provider.JwtSecurityProvider;
+import io.github.touchsun.tstudy.common.security.provider.impl.JwtSecurityProvider;
 import io.github.touchsun.tstudy.modules.system.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
