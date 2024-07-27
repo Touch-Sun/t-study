@@ -32,7 +32,9 @@ public class WebFluxSecurity {
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers(
                                 "/v1/system/user/login", 
-                                "/v1/system/user/register")
+                                "/v1/system/user/register",
+                                "/v1/health/check"
+                        )
                         .permitAll()
                         .anyExchange().authenticated())
                 .httpBasic().disable();  // 如果不使用 HTTP Basic 认证，禁用它

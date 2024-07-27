@@ -19,7 +19,7 @@ public class ServerHealthController {
     /**
      * Reactive health checkpoints
      */
-    @GetMapping("/fluxCheck")
+    @GetMapping("/check")
     public Flux<String> fluxCheck(@RequestParam(required = false) String uuid) {
         String result = uuid == null ? "OK" : "OK-" + uuid;
         return Flux.just(result);
