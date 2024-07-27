@@ -1,4 +1,4 @@
-package io.github.touchsun.tstudy.core.config;
+package io.github.touchsun.tstudy.core.constants;
 
 import io.github.touchsun.tstudy.TStudyApplication;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,6 @@ import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 
 /**
  * fill @StaticConstant tag, static field value.
@@ -28,7 +27,12 @@ public class StaticConstantProcess implements ApplicationListener<ApplicationRea
     @Autowired
     private Environment environment;
     
-    
+/**
+     * process static field value.
+     * 
+     * @param staticClass static class
+     * @throws BeansException beans exception
+     */
     public void processStaticFieldVal(Class<?> staticClass) throws BeansException {
         log.info("process static val fill. class: {}", staticClass.getName());
         Field[] fields = staticClass.getDeclaredFields();

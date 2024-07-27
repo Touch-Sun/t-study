@@ -1,4 +1,4 @@
-package io.github.touchsun.tstudy.core.config;
+package io.github.touchsun.tstudy.core.constants;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

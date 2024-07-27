@@ -2,7 +2,6 @@ package io.github.touchsun.tstudy.common.model;
 
 import io.github.touchsun.tstudy.common.security.ServerContext;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -26,9 +25,6 @@ import java.util.Objects;
  */
 @Component
 public class AuditingMongoEventListener extends AbstractMongoEventListener {
-
-    @Autowired
-    private ServerContext serverContext;
 
     @SneakyThrows
     @Override
@@ -89,7 +85,7 @@ public class AuditingMongoEventListener extends AbstractMongoEventListener {
     private void handleCreatedBy(Object source, Field field) throws IllegalAccessException {
         if (canBeFilled(field, CreatedBy.class)) {
             field.setAccessible(true);
-            field.set(source, serverContext.getCurrentUserId());
+            field.set(source, ServerContext.getCurrentUser());
         }
     }
 
@@ -103,7 +99,7 @@ public class AuditingMongoEventListener extends AbstractMongoEventListener {
     private void handleLastModifiedBy(Object source, Field field) throws IllegalAccessException {
         if (canBeFilled(field, LastModifiedBy.class)) {
             field.setAccessible(true);
-            field.set(source, serverContext.getCurrentUserId());
+            field.set(source, ServerContext.getCurrentUser());
         }
     }
 

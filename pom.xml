@@ -118,18 +118,26 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
+        <!-- Jwt Error process -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
         
+        <!-- Jwt Error process -->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>2.3.1</version>
         </dependency>
 
+        <!-- Hutool tool -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.25</version>
+        </dependency>
 
 
     </dependencies>

@@ -1,7 +1,5 @@
 package io.github.touchsun.tstudy.common.security;
 
-import org.springframework.stereotype.Service;
-
 /**
  * t-study
  * Server context
@@ -9,13 +7,19 @@ import org.springframework.stereotype.Service;
  * @author lee
  * @since 2024/7/26 11:16
  */
-@Service
 public class ServerContext {
 
-    /**
-     * get current user id
-     */
-    public String getCurrentUserId() {
-        return "admin";
+    private static final ThreadLocal<String> currentUser = new ThreadLocal<>();
+
+    public static void setCurrentUser(String username) {
+        currentUser.set(username);
+    }
+
+    public static String getCurrentUser() {
+        return currentUser.get();
+    }
+
+    public static void clear() {
+        currentUser.remove();
     }
 }

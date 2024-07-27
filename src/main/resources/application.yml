@@ -24,3 +24,5 @@ logging:
 security:
   private-key: touchsun.1204@tstudy&project
   expire-time: 36000000
+  token-prefix: Bearer
+  default-password: 1204

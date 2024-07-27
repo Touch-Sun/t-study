@@ -30,7 +30,10 @@ public class WebFluxSecurity {
         http
                 .csrf().disable()
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/api/public/**").permitAll()
+                        .pathMatchers(
+                                "/v1/system/user/login", 
+                                "/v1/system/user/register")
+                        .permitAll()
                         .anyExchange().authenticated())
                 .httpBasic().disable();  // 如果不使用 HTTP Basic 认证，禁用它
 

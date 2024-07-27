@@ -7,9 +7,10 @@ Accept: application/json
 POST {{host}}{{version}}/system/role
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZWUubGkiLCJpYXQiOjE3MjIwOTU3NzUsImV4cCI6MTcyMjEzMTc3NX0.XFk6papLV7vW5umQ_K1-6XnI_dQ0Mx87cpLAGrIQmoU
 
 {
-  "name": "管理员角色",
+  "name": "管理员角色333",
   "code": "admin"
 }
 

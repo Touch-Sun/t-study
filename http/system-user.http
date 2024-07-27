@@ -2,6 +2,7 @@
 ### get all system check
 GET {{host}}{{version}}/system/user
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b3VjaHN1bjAyIiwiaWF0IjoxNzIyMDk0NzA3LCJleHAiOjE3MjIxMzA3MDd9.0_ORbkrhOoidjQDcCb5vOtqQ642gqNiZUcQpuqSzgnA
 
 ### add one system user
 POST {{host}}{{version}}/system/user
@@ -12,6 +13,26 @@ Content-Type: application/json
   "username": "touchsun",
   "password": "123456",
   "status": "1"
+}
+
+### login
+POST {{host}}{{version}}/system/user/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "lee.li",
+  "password": "1204"
+}
+
+### register
+POST {{host}}{{version}}/system/user/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "lee.li",
+  "password": "1204"
 }
 
 ### update one system user
