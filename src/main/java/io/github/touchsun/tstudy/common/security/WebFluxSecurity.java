@@ -33,6 +33,7 @@ public class WebFluxSecurity {
     public SecurityWebFilterChain filterChain(ServerHttpSecurity http) throws Exception {
         http
                 .csrf().disable()
+                .cors().disable()
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers(
                                 SecurityConstant.EXCLUDE_PATHS)
