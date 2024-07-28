@@ -35,4 +35,10 @@ public class SecurityConstant {
      */
     @StaticConstant("security.default-password")
     public static String DEFAULT_PASSWORD;
+
+    /**
+     * exclude paths for security and web filter chain
+     */
+    @StaticConstant("security.exclude-paths")
+    public static String[] EXCLUDE_PATHS;
 }

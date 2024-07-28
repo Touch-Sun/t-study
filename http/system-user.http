@@ -2,7 +2,7 @@
 ### get all system check
 GET {{host}}{{version}}/system/user
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b3VjaHN1bjAyIiwiaWF0IjoxNzIyMDk0NzA3LCJleHAiOjE3MjIxMzA3MDd9.0_ORbkrhOoidjQDcCb5vOtqQ642gqNiZUcQpuqSzgnA
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b3VjaHN1bjAxIiwiaWF0IjoxNzIyMTQ0MzY0LCJleHAiOjE3MjIxODAzNjR9.9Y7MVpRgtTnay0OYhVmUNaI4pqvgwsAG8dLQNl7uo8U
 
 ### add one system user
 POST {{host}}{{version}}/system/user
