@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.util.matcher.ServerWebExchangeMatchers;
 import org.springframework.web.server.WebFilter;
 
 import java.util.Map;
@@ -20,6 +22,7 @@ import java.util.Map;
  * @author lee
  */
 @Configuration
+@DependsOn("staticConstantProcess")
 @EnableWebFluxSecurity
 public class WebFluxSecurity {
 
@@ -32,10 +35,7 @@ public class WebFluxSecurity {
                 .csrf().disable()
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers(
-                                "/v1/system/user/login", 
-                                "/v1/system/user/register",
-                                "/v1/health/check"
-                        )
+                                SecurityConstant.EXCLUDE_PATHS)
                         .permitAll()
                         .anyExchange().authenticated())
                 .httpBasic().disable();  // 如果不使用 HTTP Basic 认证，禁用它

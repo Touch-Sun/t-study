@@ -2,7 +2,9 @@ package io.github.touchsun.tstudy.common.security.filter.impl;
 
 import io.github.touchsun.tstudy.common.security.SecurityConstant;
 import io.github.touchsun.tstudy.common.security.ServerContext;
+import io.github.touchsun.tstudy.common.security.filter.AbstractWebFilter;
 import io.github.touchsun.tstudy.common.security.provider.impl.JwtSecurityProvider;
+import io.github.touchsun.tstudy.core.spring.SpringContextUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
@@ -19,14 +21,14 @@ import reactor.core.publisher.Mono;
  * 
  * @author lee 
  */
-@Component
-public class JwtTokenFilter implements WebFilter {
-
-    @Autowired
-    private JwtSecurityProvider jwtSecurityProvider;
+public class JwtTokenFilter extends AbstractWebFilter implements WebFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
+        if (exclude(exchange.getRequest().getPath().value())) {
+            return chain.filter(exchange);
+        }
+        JwtSecurityProvider jwtSecurityProvider = SpringContextUtil.getBean(JwtSecurityProvider.class);
         String authHeader = exchange.getRequest().getHeaders().getFirst("Authorization");
         if (authHeader != null && authHeader.startsWith(SecurityConstant.TOKEN_PREFIX.concat(" "))) {
             String authToken = authHeader.substring(7);

@@ -3,6 +3,7 @@ package io.github.touchsun.tstudy.common.security.provider.impl;
 import io.github.touchsun.tstudy.common.exception.TStudyException;
 import io.github.touchsun.tstudy.common.security.SecurityConstant;
 import io.github.touchsun.tstudy.common.security.filter.impl.JwtFilterFactory;
+import io.github.touchsun.tstudy.common.security.filter.impl.RedisSessionFilterFactory;
 import io.github.touchsun.tstudy.common.security.provider.ISecurityProvider;
 import io.github.touchsun.tstudy.common.security.provider.SecurityProvider;
 import io.jsonwebtoken.Claims;
@@ -13,20 +14,20 @@ import java.util.Date;
 
 /**
  * jwt impl provider
- * 
- * @author lee 
+ *
+ * @author lee
  */
-@SecurityProvider(filterFactory = JwtFilterFactory.class)
+@SecurityProvider(filterFactory = {JwtFilterFactory.class, RedisSessionFilterFactory.class})
 public class JwtSecurityProvider implements ISecurityProvider {
 
     @Override
     public String createToken(String userId) {
         return Jwts.builder()
-            .setSubject(userId)
-            .setIssuedAt(new Date())
-            .setExpiration(new Date(System.currentTimeMillis() + SecurityConstant.EXPIRE_TIME))
-            .signWith(SignatureAlgorithm.HS256, SecurityConstant.PRIVATE_KEY)
-            .compact();
+                .setSubject(userId)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + SecurityConstant.EXPIRE_TIME))
+                .signWith(SignatureAlgorithm.HS256, SecurityConstant.PRIVATE_KEY)
+                .compact();
     }
 
     @Override

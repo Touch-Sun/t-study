@@ -26,6 +26,7 @@ security:
   expire-time: 36000000
   token-prefix: Bearer
   default-password: 1204
+  exclude-paths: /v1/system/user/login,/v1/system/user/register,/v1/health/check
 
 mongodb:
   id-field-name: id

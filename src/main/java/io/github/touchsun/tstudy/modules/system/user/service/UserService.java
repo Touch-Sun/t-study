@@ -3,6 +3,7 @@ package io.github.touchsun.tstudy.modules.system.user.service;
 import io.github.touchsun.tstudy.common.exception.TStudyException;
 import io.github.touchsun.tstudy.common.security.provider.ISecurityProvider;
 import io.github.touchsun.tstudy.common.service.AbstractBaseService;
+import io.github.touchsun.tstudy.core.redis.RedisUtil;
 import io.github.touchsun.tstudy.modules.system.user.enums.UserStatusEnum;
 import io.github.touchsun.tstudy.modules.system.user.model.User;
 import io.github.touchsun.tstudy.modules.system.user.repository.UserRepository;
@@ -37,8 +38,13 @@ public class UserService extends AbstractBaseService<User, String> {
                 .switchIfEmpty(Mono.error(
                         new TStudyException("username: {} or password error", user.getUsername())))
                 // login get username to create token
-                .map(User::getUsername)
-                .map(securityProvider::createToken);
+                .flatMap(dbUser -> {
+                    String token = securityProvider.createToken(dbUser.getUsername());
+                    // set redis session
+                    RedisUtil.setValue(dbUser.getUsername(), dbUser);
+                    // return token
+                    return Mono.just(token);
+                });
     }
 
     public Mono<User> register(User user) {
