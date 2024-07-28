@@ -1,0 +1,41 @@
+/* 引入 Bootstrap 样式 */
+@import 'bootstrap/dist/css/bootstrap.css';
+
+/* 全局重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置 HTML 和 body 高度为 100% */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* 设置 body 的基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* 使用 Bootstrap 的浅灰背景 */
+}
+
+/* 设置全屏容器的基础样式 */
+.fullscreen-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* 通用的无 padding 和 margin 样式 */
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
