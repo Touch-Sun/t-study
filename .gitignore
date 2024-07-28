@@ -38,3 +38,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### page ###
+/page/dist/
+/page/node_modules/
+/page/package-lock.json
